@@ -1,12 +1,13 @@
-import { Button, Skeleton, TextArea } from '@douyinfe/semi-ui';
-import { Component } from 'react';
+import { Button, Skeleton, TextArea, Input } from '@douyinfe/semi-ui';
+import { Component, __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED } from 'react';
 import axios from 'axios';
 class ProfileCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isLoading: true,
-      text: String
+      text: String,
+      url: 'localhost:8080/stupid_demo_war_exploded/xmu'
     };
   }
 
@@ -28,18 +29,27 @@ class ProfileCard extends Component {
   }
 
   axiosGet() {
+    const reqUrl = `http://${this.state.url}`;
     axios
-      .get('//localhost:8080/stupid_demo_war_exploded/xmu')
+      .get(reqUrl)
       .then((res) => {
-        // console.log(res);
         this.setState({
           text: res.data
         });
-        console.log(this.state.text);
       })
       .catch((err) => {
-        console.log(err);
+        this.setState({
+          text: err
+        });
       });
+  }
+
+  handleChange(value, e) {
+    console.log('value: ', value);
+    console.log('e: ', e);
+    this.setState({
+      text: value
+    });
   }
 
   render() {
@@ -56,8 +66,16 @@ class ProfileCard extends Component {
           <Skeleton placeholder={<Skeleton.Paragraph rows={2} />} loading={this.state.isLoading}>
             <h1>SWE306 test</h1>
             <p>abaaba</p>
+            <Input
+              placeholder="request url"
+              addonBefore="http://"
+              defaultValue={this.state.url}
+              autofocus
+              showClear
+              onChange={this.handleChange.bind(this)}
+            />
             <Button onClick={() => this.axiosGet()}>axios get</Button>
-            <TextArea value={this.state.text} />
+            <TextArea value={this.state?.text} />
           </Skeleton>
         </div>
       </div>
