@@ -29,7 +29,7 @@ class ProfileCard extends Component {
   }
 
   axiosGet() {
-    const reqUrl = `http://${this.state.url}`;
+    const reqUrl = `//${this.state.url}`;
     axios
       .get(reqUrl)
       .then((res) => {
