@@ -1,12 +1,12 @@
 import { Button, Skeleton, TextArea, Input } from '@douyinfe/semi-ui';
-import { Component, __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED } from 'react';
+import { Component } from 'react';
 import axios from 'axios';
 class ProfileCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isLoading: true,
-      text: String,
+      respText: String,
       url: 'localhost:8080/stupid_demo_war_exploded/xmu'
     };
   }
@@ -28,27 +28,27 @@ class ProfileCard extends Component {
     console.log('fake loading done\nis loading', this.state.isLoading);
   }
 
-  axiosGet() {
+  axiosGetTest() {
+    // it should accept url as a parameter and return the response
     const reqUrl = `//${this.state.url}`;
     axios
       .get(reqUrl)
       .then((res) => {
         this.setState({
-          text: res.data
+          respText: res.data
         });
       })
       .catch((err) => {
         this.setState({
-          text: err
+          respText: err
         });
       });
   }
 
   handleChange(value, e) {
-    console.log('value: ', value);
-    console.log('e: ', e);
+    console.log(this.state);
     this.setState({
-      text: value
+      url: value
     });
   }
 
@@ -74,8 +74,8 @@ class ProfileCard extends Component {
               showClear
               onChange={this.handleChange.bind(this)}
             />
-            <Button onClick={() => this.axiosGet()}>axios get</Button>
-            <TextArea value={this.state?.text} />
+            <Button onClick={() => this.axiosGetTest()}>axios get</Button>
+            <TextArea value={this.state?.respText} />
           </Skeleton>
         </div>
       </div>
