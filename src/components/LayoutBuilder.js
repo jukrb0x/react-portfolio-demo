@@ -26,7 +26,7 @@ class LayoutBuilder extends Component {
           }
         >
           <ProfileCard />
-          <Clock />
+          <Clock/> 
           <TodoList />
         </Content>
         <Footer>

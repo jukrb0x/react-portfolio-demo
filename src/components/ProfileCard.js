@@ -46,7 +46,6 @@ class ProfileCard extends Component {
   }
 
   handleChange(value, e) {
-    console.log(this.state);
     this.setState({
       url: value
     });
