@@ -1,7 +1,7 @@
 import { Button, Skeleton, TextArea, Input } from '@douyinfe/semi-ui';
 import { Component } from 'react';
 import axios from 'axios';
-class ProfileCard extends Component {
+export default class AxiosTest extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -81,5 +81,3 @@ class ProfileCard extends Component {
     );
   }
 }
-
-export default ProfileCard;

@@ -1,10 +1,9 @@
 import { Component } from 'react';
 import { Layout } from '@douyinfe/semi-ui';
-import ProfileCard from './ProfileCard';
+import ProfileSection from './ProfileSection';
 import Navbar from './layout/Navbar';
 import Foot from './layout/Foot';
-import Clock from './Clock';
-import TodoList from '../TodoApp/TodoList';
+import ResumeSection from './ResumeSection';
 
 class LayoutBuilder extends Component {
   render() {
@@ -25,9 +24,8 @@ class LayoutBuilder extends Component {
             { padding: '30px' } // align...
           }
         >
-          <ProfileCard />
-          <Clock/> 
-          <TodoList />
+          <ProfileSection />
+          <ResumeSection />
         </Content>
         <Footer>
           <Foot />
