@@ -1,48 +1,81 @@
-import { Button, Skeleton, TextArea, Input } from '@douyinfe/semi-ui';
+import {
+    Button,
+    Skeleton,
+    Typography,
+    TextArea,
+    Input,
+    Avatar,
+    AvatarGroup,
+    Space
+} from '@douyinfe/semi-ui';
 import { Component } from 'react';
-import axios from 'axios';
+import personalInformation from '../data/personalInfo';
+import { IconApartment, IconLink, IconMail, IconUserCardPhone } from '@douyinfe/semi-icons';
+
 export default class ProfileSection extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      loading: false
-    };
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            info: personalInformation
+        };
+        // FIXME: combine firstName and lastName to a new state?
+    }
 
-  componentDidMount() {
-    this.fakeLoader = setTimeout(() => this.fakeLoading(), 1000);
-    console.log('fake loading is loading now');
-    console.log('is loading: ', this.state.isLoading);
-  }
-
-  componentWillUnmount() {
-    clearTimeout(this.fakeLoader);
-  }
-
-  fakeLoading() {
-    this.setState({
-      isLoading: false
-    });
-    console.log('fake loading done\nis loading', this.state.isLoading);
-  }
-
-  render() {
-    return (
-      <div style={{ backgroundColor: 'var(--semi-color-bg-1)' }} className={'profile-card'}>
-        <div
-          style={{
-            borderRadius: '10px',
-            border: '1px solid var(--semi-color-border)',
-            height: '200px',
-            padding: '32px'
-          }}
-        >
-          <Skeleton placeholder={<Skeleton.Paragraph rows={2} />} loading={this.state.isLoading}>
-            <h1>SWE306 test</h1>
-            <p>abaaba</p>
-          </Skeleton>
-        </div>
-      </div>
-    );
-  }
+    render() {
+        const { Title, Paragraph, Text } = Typography;
+        const { firstName, lastName, tel, email, location, website } = this.state.info;
+        return (
+            <div className={ 'profile-card-wrapper' }>
+                <div className="profile-card-content">
+                    <div className={ 'profile-card-avatar-wrapper' }>
+                        <Avatar // TODO: decouple details
+                            alt={ 'avatar' }
+                            size={ 'extra-large' }
+                            src={ 'https://avatars.githubusercontent.com/u/15688641?v=4' }
+                        />
+                        <Title className="title" heading={ 3 }>
+                            { firstName } { lastName }
+                        </Title>
+                    </div>
+                    <div className={ 'profile-card-details-wrapper' }>
+                        {/* decouple this */ }
+                        <div className="location">
+                            <Space>
+                                <IconApartment/>
+                                <Text strong type={ 'secondary' }>
+                                    { location }
+                                </Text>
+                            </Space>
+                        </div>
+                        <div className="website">
+                            <Space>
+                                <IconLink/>
+                                <Text strong type={ 'secondary' }>
+                                    <a href={ website } target={ '_blank' }>
+                                        { website }
+                                    </a>
+                                </Text>
+                            </Space>
+                        </div>
+                        <div className="email">
+                            <Space>
+                                <IconMail/>
+                                <Text strong type={ 'secondary' }>
+                                    { email }
+                                </Text>
+                            </Space>
+                        </div>
+                        <div className="tel">
+                            <Space>
+                                <IconUserCardPhone/>
+                                <Text strong type={ 'secondary' }>
+                                    { tel }
+                                </Text>
+                            </Space>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
 }

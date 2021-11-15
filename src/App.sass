@@ -1,3 +1,25 @@
+@import './styles/profile-card'
+@import './styles/resume-content'
+@import './styles/footer'
+
 .App
   min-height: 100%
   height: 100%
+  background-color: var(--semi-color-bg-1)
+
+.layout-wrapper
+  display: flex
+  border: 1px solid var(--semi-color-border)
+  height: 100%
+
+
+.content
+  display: flex
+  flex-direction: row
+  padding: 30px
+  margin-left: 10rem
+  margin-right: 10rem
+
+// remove the underline on navbar
+.semi-navigation a
+  text-decoration: none

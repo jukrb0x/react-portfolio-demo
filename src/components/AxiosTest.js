@@ -12,7 +12,7 @@ export default class AxiosTest extends Component {
   }
 
   componentDidMount() {
-    this.fakeLoader = setTimeout(() => this.fakeLoading(), 1000);
+    this.fakeLoader = setTimeout(() => this.fakeLoading(), 3000);
     console.log('fake loading is loading now');
     console.log('is loading: ', this.state.isLoading);
   }
