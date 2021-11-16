@@ -1,34 +1,31 @@
 import {
-    Button,
-    Skeleton,
     Typography,
-    TextArea,
-    Input,
     Avatar,
-    AvatarGroup,
     Space
 } from '@douyinfe/semi-ui';
 import { Component } from 'react';
-import personalInformation from '../data/personalInfo';
+import personalInfo from '../data/personalInfo';
 import { IconApartment, IconLink, IconMail, IconUserCardPhone } from '@douyinfe/semi-icons';
 
 export default class ProfileSection extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            info: personalInformation
+            info: personalInfo
         };
         // FIXME: combine firstName and lastName to a new state?
     }
 
     render() {
-        const { Title, Paragraph, Text } = Typography;
+        const { Title, Text } = Typography;
         const { firstName, lastName, tel, email, location, website } = this.state.info;
         return (
             <div className={ 'profile-card-wrapper' }>
                 <div className="profile-card-content">
                     <div className={ 'profile-card-avatar-wrapper' }>
-                        <Avatar // TODO: decouple details
+                        <Avatar
+                            // TODO: the size of Avatar should be changed with media query
+                            // "media query not in css"
                             alt={ 'avatar' }
                             size={ 'extra-large' }
                             src={ 'https://avatars.githubusercontent.com/u/15688641?v=4' }
@@ -38,10 +35,14 @@ export default class ProfileSection extends Component {
                         </Title>
                     </div>
                     <div className={ 'profile-card-details-wrapper' }>
-                        {/* decouple this */ }
+                        {/* TODO: decouple this */ }
                         <div className="location">
                             <Space>
-                                <IconApartment/>
+                                <IconApartment
+                                    style={ {
+                                        color: 'var(--semi-color-text-1)',
+                                    } }
+                                />
                                 <Text strong type={ 'secondary' }>
                                     { location }
                                 </Text>
@@ -49,9 +50,13 @@ export default class ProfileSection extends Component {
                         </div>
                         <div className="website">
                             <Space>
-                                <IconLink/>
+                                <IconLink
+                                    style={ {
+                                        color: 'var(--semi-color-text-1)',
+                                    } }
+                                />
                                 <Text strong type={ 'secondary' }>
-                                    <a href={ website } target={ '_blank' }>
+                                    <a href={ website } target={ '_blank' } rel="noreferrer">
                                         { website }
                                     </a>
                                 </Text>
@@ -59,7 +64,11 @@ export default class ProfileSection extends Component {
                         </div>
                         <div className="email">
                             <Space>
-                                <IconMail/>
+                                <IconMail
+                                    style={ {
+                                        color: 'var(--semi-color-text-1)',
+                                    } }
+                                />
                                 <Text strong type={ 'secondary' }>
                                     { email }
                                 </Text>
@@ -67,7 +76,11 @@ export default class ProfileSection extends Component {
                         </div>
                         <div className="tel">
                             <Space>
-                                <IconUserCardPhone/>
+                                <IconUserCardPhone
+                                    style={ {
+                                        color: 'var(--semi-color-text-1)',
+                                    } }
+                                />
                                 <Text strong type={ 'secondary' }>
                                     { tel }
                                 </Text>

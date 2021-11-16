@@ -1,6 +1,45 @@
+@import "screen"
+
 .foot-wrapper
-    justify-content: space-between
+  @include xs-screen
+    // works when screen.size >= screen-xs
     display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    padding: 10px
+    color: var(--semi-color-text-2)
+    background-color: rgba(var(--semi-grey-0), 1)
+    .foot-copyright
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      align-items: center
+
+
+  @include sm-screen
+    // works when screen.size >= screen-sm
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
     padding: 20px
     color: var(--semi-color-text-2)
     background-color: rgba(var(--semi-grey-0), 1)
+    .foot-copyright
+      display: block
+
+  @include md-screen
+    // ruleset works when screen.size >= screen-md
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    padding: 20px
+    color: var(--semi-color-text-2)
+    background-color: rgba(var(--semi-grey-0), 1)
+
+//@include lg-screen
+//  justify-content: center
+//  padding: 10px
+//  color: var(--semi-color-text-2)
+//  background-color: rgba(var(--semi-grey-0), 1)

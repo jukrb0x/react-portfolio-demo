@@ -1,0 +1,26 @@
+// responsive
+// media query screen breakpoints
+$screen-xs: 0
+$screen-sm: 576px
+$screen-md: 768px
+$screen-lg: 992px
+$screen-xl: 1200px
+$screen-xxl: 1400px
+
+
+@mixin lg-screen()
+  @media (min-width: $screen-lg)
+    @content
+
+
+@mixin md-screen()
+  @media (min-width: $screen-md)
+    @content
+
+@mixin sm-screen()
+  @media (min-width: $screen-sm)
+    @content
+
+@mixin xs-screen()
+  @media (min-width: $screen-xs)
+    @content

@@ -1,11 +1,8 @@
-import { Avatar, Button, Nav } from '@douyinfe/semi-ui';
+import { Button, Nav } from '@douyinfe/semi-ui';
 import {
-    IconBell,
-    IconHelpCircle,
+    IconComment,
     IconHome,
-    IconLive, IconMoon,
-    IconSemiLogo,
-    IconSetting
+    IconLive, IconMoon, IconPercentage
 } from '@douyinfe/semi-icons';
 import { Component } from 'react';
 import { NavLink } from 'react-router-dom';
@@ -14,7 +11,7 @@ class Navbar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedNav: 'home'
+            selectedNav: 'home' // FIXME: the active route
         };
     }
 
@@ -30,19 +27,18 @@ class Navbar extends Component {
     render() {
         return (
             <div style={ { backgroundColor: 'var(--semi-color-bg-1)' } }>
-                <Nav mode="horizontal" defaultSelectedKeys={ [this.state.selectedNav] }>
+                <Nav mode="horizontal" defaultSelectedKeys={ [this.state.selectedNav] } className={ "navbar" }>
                     <Nav.Header>
-                        <IconSemiLogo style={ { fontSize: 36 } }/>
+                        <IconPercentage style={ { fontSize: 36, color: "var(--semi-color-text-1" } }/>
                     </Nav.Header>
-                    {/* TODO: change the icons */ }
                     <NavLink to="/home">
                         <Nav.Item itemKey="home" text="Home" icon={ <IconHome size="large"/> }/>
                     </NavLink>
                     <NavLink to="/aha">
-                        <Nav.Item itemKey="aha" text="Aha" icon={ <IconLive size="large"/> }/>
+                        <Nav.Item itemKey="aha" text="Aha!" icon={ <IconLive size="large"/> }/>
                     </NavLink>
                     <NavLink to="/contact">
-                        <Nav.Item itemKey="contact" text="Contact me" icon={ <IconSetting size="large"/> }/>
+                        <Nav.Item itemKey="contact" text="Contact me" icon={ <IconComment size="large"/> }/>
                     </NavLink>
                     <Nav.Footer>
                         <Button theme={ "borderless" }

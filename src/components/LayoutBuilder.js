@@ -3,7 +3,6 @@ import { Layout } from '@douyinfe/semi-ui';
 import Navbar from '../layout/Navbar';
 import Foot from '../layout/Foot';
 import MainContent from '../layout/MainContent';
-import { Outlet } from "react-router-dom";
 
 class LayoutBuilder extends Component {
     render() {
@@ -13,7 +12,7 @@ class LayoutBuilder extends Component {
                 <Header>
                     <Navbar/>
                 </Header>
-                <Content className="content">
+                <Content className={"main-content-wrapper"}>
                     <MainContent/>
                 </Content>
                 <Footer>
