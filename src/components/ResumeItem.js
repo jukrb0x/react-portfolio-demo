@@ -8,7 +8,7 @@ export default class ResumeItem extends Component {
         return (
             <div className="resume-item-wrapper">
                 <div className="resume-item-title">
-                    <Title heading={ 3 }>{ title }</Title>
+                    <Title heading={ 4 }>{ title }</Title>
                 </div>
                 <div className={ "pro-wrapper" }>
                     <Space size={ "medium" } align={ "start" }>

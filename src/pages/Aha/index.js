@@ -47,10 +47,12 @@ export default class Aha extends Component {
         );
         return (
             <div className={ "aha-content-wrapper" }>
-                <ProfileSection/>
+                <div className="aha-content-profile">
+                    <ProfileSection/>
+                </div>
                 <Space vertical align={ "start" } className={ "aha-content" }>
-                    <div className={"aha-content-header"}>
-                        <Title heading={ 1 }>Congrats!</Title>
+                    <div className={ "aha-content-header" }>
+                        <Title heading={ 1 }>Congrats! 😎</Title>
                         <Title heading={ 4 } type={ "tertiary" }>You found this page</Title>
                     </div>
                     <div className={ "aha-content-body" }>

@@ -7,11 +7,13 @@ $screen-lg: 992px
 $screen-xl: 1200px
 $screen-xxl: 1400px
 
+@mixin xl-screen()
+  @media (min-width: $screen-xl)
+    @content
 
 @mixin lg-screen()
   @media (min-width: $screen-lg)
     @content
-
 
 @mixin md-screen()
   @media (min-width: $screen-md)

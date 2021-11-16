@@ -4,7 +4,7 @@ import {
     Space
 } from '@douyinfe/semi-ui';
 import { Component } from 'react';
-import personalInfo from '../data/personalInfo';
+import personalInfo from '../data/PersonalData';
 import { IconApartment, IconLink, IconMail, IconUserCardPhone } from '@douyinfe/semi-icons';
 
 export default class ProfileSection extends Component {
@@ -35,57 +35,59 @@ export default class ProfileSection extends Component {
                         </Title>
                     </div>
                     <div className={ 'profile-card-details-wrapper' }>
-                        {/* TODO: decouple this */ }
-                        <div className="location">
-                            <Space>
-                                <IconApartment
-                                    style={ {
-                                        color: 'var(--semi-color-text-1)',
-                                    } }
-                                />
-                                <Text strong type={ 'secondary' }>
-                                    { location }
-                                </Text>
-                            </Space>
-                        </div>
-                        <div className="website">
-                            <Space>
-                                <IconLink
-                                    style={ {
-                                        color: 'var(--semi-color-text-1)',
-                                    } }
-                                />
-                                <Text strong type={ 'secondary' }>
-                                    <a href={ website } target={ '_blank' } rel="noreferrer">
-                                        { website }
-                                    </a>
-                                </Text>
-                            </Space>
-                        </div>
-                        <div className="email">
-                            <Space>
-                                <IconMail
-                                    style={ {
-                                        color: 'var(--semi-color-text-1)',
-                                    } }
-                                />
-                                <Text strong type={ 'secondary' }>
-                                    { email }
-                                </Text>
-                            </Space>
-                        </div>
-                        <div className="tel">
-                            <Space>
-                                <IconUserCardPhone
-                                    style={ {
-                                        color: 'var(--semi-color-text-1)',
-                                    } }
-                                />
-                                <Text strong type={ 'secondary' }>
-                                    { tel }
-                                </Text>
-                            </Space>
-                        </div>
+                        <Space vertical align={ "start" } spacing={ "tight" }>
+                            {/* TODO: decouple this */ }
+                            <div className="location">
+                                <Space>
+                                    <IconApartment
+                                        style={ {
+                                            color: 'var(--semi-color-text-1)',
+                                        } }
+                                    />
+                                    <Text strong type={ 'secondary' }>
+                                        { location }
+                                    </Text>
+                                </Space>
+                            </div>
+                            <div className="website">
+                                <Space>
+                                    <IconLink
+                                        style={ {
+                                            color: 'var(--semi-color-text-1)',
+                                        } }
+                                    />
+                                    <Text strong type={ 'secondary' }>
+                                        <a href={ website } target={ '_blank' } rel="noreferrer">
+                                            { website }
+                                        </a>
+                                    </Text>
+                                </Space>
+                            </div>
+                            <div className="email">
+                                <Space>
+                                    <IconMail
+                                        style={ {
+                                            color: 'var(--semi-color-text-1)',
+                                        } }
+                                    />
+                                    <Text strong type={ 'secondary' }>
+                                        { email }
+                                    </Text>
+                                </Space>
+                            </div>
+                            <div className="tel">
+                                <Space>
+                                    <IconUserCardPhone
+                                        style={ {
+                                            color: 'var(--semi-color-text-1)',
+                                        } }
+                                    />
+                                    <Text strong type={ 'secondary' }>
+                                        { tel }
+                                    </Text>
+                                </Space>
+                            </div>
+                        </Space>
                     </div>
                 </div>
             </div>

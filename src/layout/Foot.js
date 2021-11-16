@@ -1,6 +1,6 @@
 import { IconLikeHeart, IconTerminal } from '@douyinfe/semi-icons';
 import { Component } from 'react';
-import personalInformation from '../data/personalInfo';
+import personalInformation from '../data/PersonalData';
 import { Space } from "@douyinfe/semi-ui";
 
 class Foot extends Component {

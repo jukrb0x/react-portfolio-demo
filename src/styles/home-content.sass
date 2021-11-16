@@ -1,7 +1,33 @@
+@import "screen"
+
 .home-content
-  margin-left: 1em
   flex: 1
-  padding: 1em
+  @include md-screen
+    margin-left: 1em
+    padding-left: 1em
+
+.home-content-header-wrapper
+  display: block
 
 .home-content-header
+  &:hover
+    box-shadow: 0 5px 5px rgba(var(--semi-grey-2), 1)
+    transition: all .2s ease
+  background: rgb(119, 161, 211)
+  background: linear-gradient(90deg, rgba(119, 161, 211, 1) 0%, rgba(121, 203, 202, 1) 35%, rgba(230, 132, 174, 1) 100%)
+  border-radius: 10px
+  border: 1px hidden var(--semi-color-border)
+  @include xs-screen
+    padding: 2rem
+    margin-top: 1rem
+    margin-bottom: 1rem
+  @include md-screen
+    margin-top: 0
+
+.home-content-resume
+  display: flex
+  flex-direction: column
+  border-radius: 10px
+  border: 1px solid var(--semi-color-border)
+  padding: 2rem
   margin-bottom: 1rem
