@@ -1,4 +1,4 @@
-import { Button, Dropdown, Nav } from '@douyinfe/semi-ui';
+import { Button, Collapsible, Nav } from '@douyinfe/semi-ui';
 import {
     IconComment,
     IconHome,
@@ -11,8 +11,10 @@ class Navbar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedNav: 'home' // FIXME: the active route
+            selectedNav: 'home', // FIXME: the active route
+            isDropdownMenuOpen: false
         };
+        this.handleDropDownMenu = this.handleDropDownMenu.bind(this);
     }
 
     handleDarkMode() {
@@ -22,6 +24,12 @@ class Navbar extends Component {
         } else {
             body.setAttribute('theme-mode', 'dark');
         }
+    }
+
+    handleDropDownMenu() {
+        this.setState({
+            isDropdownMenuOpen: !this.state.isDropdownMenuOpen
+        })
     }
 
     render() {
@@ -52,23 +60,48 @@ class Navbar extends Component {
                                     this.handleDarkMode()
                                 } }
                         />
-                        <Dropdown
-                            trigger={ "click" }
-                            position={ "bottomRight" }
-                            render={
-                                <Dropdown.Menu>
-                                    <Dropdown.Item>1: click me!</Dropdown.Item>
-                                </Dropdown.Menu>
-                            }
-                        >
-                            <Button theme={ "borderless" }
-                                    className={ "dropdown-nav-menu" }
-                                    icon={ <IconMenu size={ "extra-large" }/> }
-                            />
-                        </Dropdown>
+                        {/*<Dropdown*/ }
+                        {/*    trigger={ "click" }*/ }
+                        {/*    position={ "bottomRight" }*/ }
+                        {/*    render={*/ }
+                        {/*        <Dropdown.Menu>*/ }
+                        {/*            <Dropdown.Item>1: click me!</Dropdown.Item>*/ }
+                        {/*        </Dropdown.Menu>*/ }
+                        {/*    }*/ }
+                        {/*>*/ }
+                        {/*</Dropdown>*/ }
+                        <Button theme={ "borderless" }
+                                className={ "dropdown-nav-menu" }
+                                icon={ <IconMenu size={ "extra-large" }/> }
+                                onClick={ () => {
+                                    this.handleDropDownMenu()
+                                } }
+                        />
 
                     </Nav.Footer>
                 </Nav>
+                <div className={ "dropdown-navigation-wrapper" }>
+                    <Collapsible isOpen={ this.state.isDropdownMenuOpen }>
+                        <div className={ "dropdown-navigation" }>
+                            <NavLink to="/home">
+                                <Nav.Item onClick={ () => {
+                                    this.handleDropDownMenu()
+                                } } itemKey="home" text="Home" icon={ <IconHome size="large"/> }/>
+                            </NavLink>
+                            <NavLink to="/aha">
+                                <Nav.Item onClick={ () => {
+                                    this.handleDropDownMenu()
+                                } } itemKey="aha" text="Aha!" icon={ <IconLive size="large"/> }/>
+                            </NavLink>
+                            <NavLink to="/contact">
+                                <Nav.Item onClick={ () => {
+                                    this.handleDropDownMenu()
+                                } } itemKey="contact" text="Contact me"
+                                          icon={ <IconComment size="large"/> }/>
+                            </NavLink>
+                        </div>
+                    </Collapsible>
+                </div>
             </div>
         );
     }
