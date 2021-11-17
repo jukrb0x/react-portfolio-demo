@@ -1,4 +1,5 @@
 @import "styles/screen"
+@import "styles/navbar"
 @import 'styles/profile-card'
 @import 'styles/footer'
 @import "styles/aha-content"
@@ -8,12 +9,6 @@
 .App
   min-height: 100%
   background-color: var(--semi-color-bg-1)
-
-.navbar
-  position: fixed
-  top: 0
-  z-index: 999
-  width: 100%
 
 .layout-wrapper
   display: flex
@@ -46,10 +41,6 @@
   @include md-screen
     flex-direction: row
 
-// remove the underline on navbar
-.semi-navigation a
-  text-decoration: none
-
 .float-anchor
   position: fixed
   top: 100px
@@ -65,3 +56,11 @@
   @include xxl-screen
     right: 20px
 
+.backtop
+  @include xs-screen
+    right: 30px !important
+    bottom: 50px !important
+
+  @include xl-screen
+    right: 170px !important
+    bottom: 80px !important

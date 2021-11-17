@@ -31,14 +31,16 @@ export default class ProfileSection extends Component {
             <div className={ 'profile-card-wrapper' }>
                 <div className="profile-card-content">
                     <div className={ 'profile-card-avatar-wrapper' }>
-                        <Avatar
-                            // TODO: the size of Avatar should be changed with media query
-                            // "media query not in css"
-                            className={ "profile-avatar" }
-                            alt={ 'avatar' }
-                            size={ 'extra-large' }
-                            src={ 'https://avatars.githubusercontent.com/u/15688641?v=4' }
-                        />
+                        <Tooltip content={ "Hire me!" }>
+                            <Avatar
+                                // TODO: the size of Avatar should be changed with media query
+                                // "media query not in css"
+                                className={ "profile-avatar" }
+                                alt={ 'avatar' }
+                                size={ 'extra-large' }
+                                src={ 'https://avatars.githubusercontent.com/u/15688641?v=4' }
+                            />
+                        </Tooltip>
                         <Title className="title" heading={ 3 }>
                             { firstName } { lastName }
                         </Title>

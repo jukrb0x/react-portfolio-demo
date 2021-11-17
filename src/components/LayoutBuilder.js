@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Layout } from '@douyinfe/semi-ui';
+import { BackTop, Layout } from '@douyinfe/semi-ui';
 import Navbar from '../layout/Navbar';
 import Foot from '../layout/Foot';
 import MainContent from '../layout/MainContent';
@@ -12,12 +12,13 @@ class LayoutBuilder extends Component {
                 <Header>
                     <Navbar/>
                 </Header>
-                <Content className={"main-content-wrapper"}>
+                <Content className={ "main-content-wrapper" }>
                     <MainContent/>
                 </Content>
                 <Footer>
                     <Foot/>
                 </Footer>
+                <BackTop className={"backtop"}/>
             </Layout>
         );
     }

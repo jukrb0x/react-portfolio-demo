@@ -43,8 +43,8 @@ export default class Contact extends Component {
                                     />
 
                                     <Input
-                                        field="name"
-                                        label="名称（Input）"
+                                        field="email"
+                                        label="E-mail"
                                         style={ { width: '100%' } }
                                         trigger='blur'
                                     />
