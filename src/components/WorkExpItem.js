@@ -1,14 +1,14 @@
 import { Component } from 'react';
 import { Space, Typography } from "@douyinfe/semi-ui";
 
-export default class ResumeItem extends Component {
+export default class WorkExpItem extends Component {
     render() {
         const { title, datetime, description, profession } = this.props.item;
         const { Title, Paragraph, Text } = Typography;
         return (
             <div className="resume-item-wrapper">
                 <div className="resume-item-title">
-                    <Title heading={ 4 }>{ title }</Title>
+                    <Title heading={ 5 }>{ title }</Title>
                 </div>
                 <div className={ "pro-wrapper" }>
                     <Space size={ "medium" } align={ "start" }>

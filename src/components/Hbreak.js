@@ -5,7 +5,8 @@ class Hbreak extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            border: props.border !== undefined
+            border: props.border !== undefined,
+            height: props.height !== undefined ? props.height : 1,
         }
     }
 
@@ -16,7 +17,7 @@ class Hbreak extends Component {
                     style={ {
                         marginTop: "0.2rem",
                         borderTop: "1px solid rgba(var(--semi-grey-1), 1)",
-                        marginBottom: "0.8rem"
+                        marginBottom: (this.state.height - 0.2) + "rem"
                     } }
                 />
             )
@@ -24,7 +25,7 @@ class Hbreak extends Component {
             return (
                 <div
                     style={ {
-                        marginTop: "1rem",
+                        marginTop: this.state.height + "rem",
                     } }
                 />
 

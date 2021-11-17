@@ -1,8 +1,8 @@
 import { Component } from "react";
 import ProfileSection from "../../components/ProfileSection";
 import { PublicationSection, WorkExperienceSection, SocialWorkSection } from "../../components/WorkExperienceSection";
-import { Typography } from "@douyinfe/semi-ui";
-import personalInfo from "../../data/PersonalData";
+import { Anchor, Typography } from "@douyinfe/semi-ui";
+import PersonalInfo from "../../data/PersonalData";
 import PersonalDescription from "../../components/PersonalDescription";
 import { Hbreak } from "../../components/Hbreak";
 
@@ -10,7 +10,7 @@ export default class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: `${ personalInfo.firstName } ${ personalInfo.lastName }`
+            name: `${ PersonalInfo.firstName } ${ PersonalInfo.lastName }`
         }
     }
 
@@ -20,6 +20,9 @@ export default class Home extends Component {
 
     render() {
         const { Title } = Typography;
+        const getContainer = () => {
+            return document.querySelector('window');
+        }
         return (
             <div className={ "home-content-wrapper" }>
                 <ProfileSection/>
@@ -38,9 +41,18 @@ export default class Home extends Component {
                         <SocialWorkSection/>
                         <Hbreak/>
                         <PublicationSection/>
-
                     </div>
-
+                </div>
+                <div className={"float-anchor"}>
+                    <Anchor
+                        getContainer={ getContainer }
+                        offsetTop={ 100 }
+                        targetOffset={ 100 }
+                    >
+                        <Anchor.Link href="#work-experience-section" title="Work Experience"/>
+                        <Anchor.Link href="#social-work-section" title="Social Practice"/>
+                        <Anchor.Link href="#publication-section" title="Publications"/>
+                    </Anchor>
                 </div>
             </div>
         );
