@@ -148,13 +148,13 @@ export default class ProfileSection extends Component {
                                     </Tooltip>
                                     <Tooltip content={ "Twitter" }>
                                         <a href={ "https://twitter.com/" } target={ "_blank" } rel="noreferrer">
-                                            <Button theme={ "borderless" } className={ "facebook" }
+                                            <Button theme={ "borderless" } className={ "twitter" }
                                                     icon={ <IconTwitter/> }/>
                                         </a>
                                     </Tooltip>
                                     <Tooltip content={ "YouTube" }>
                                         <a href={ "https://youtube.com/" } target={ "_blank" } rel="noreferrer">
-                                            <Button theme={ "borderless" } className={ "facebook" }
+                                            <Button theme={ "borderless" } className={ "youtube" }
                                                     icon={ <IconYoutube/> }/>
                                         </a>
                                     </Tooltip>

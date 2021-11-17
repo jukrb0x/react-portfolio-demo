@@ -1,6 +1,6 @@
 import { Component } from "react";
 import ProfileSection from "../../components/ProfileSection";
-import { PublicationSection, ResumeSection } from "../../components/ResumeSection";
+import { PublicationSection, WorkExperienceSection, SocialWorkSection } from "../../components/WorkExperienceSection";
 import { Typography } from "@douyinfe/semi-ui";
 import personalInfo from "../../data/PersonalData";
 import PersonalDescription from "../../components/PersonalDescription";
@@ -33,9 +33,12 @@ export default class Home extends Component {
                         </div>
                     </div>
                     <div className={ "home-content-resume" }>
-                        <ResumeSection/>
+                        <WorkExperienceSection/>
+                        <Hbreak/>
+                        <SocialWorkSection/>
                         <Hbreak/>
                         <PublicationSection/>
+
                     </div>
 
                 </div>
