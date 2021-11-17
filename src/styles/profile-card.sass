@@ -1,10 +1,22 @@
 .profile-card-wrapper
   background-color: var(--semi-color-bg-1)
 
-  .profile-card-content
+  .profile-avatar
+    transition: all .3s ease-in-out
+
     &:hover
-      box-shadow: 0 5px 5px rgba(var(--semi-grey-2), 1)
-      transition: all .2s ease
+      box-shadow: 0 0 25px rgba(var(--semi-grey-2), 1)
+      transition: all .3s ease-in-out
+  //transform: rotate(360deg)
+  //-ms-transform: rotate(360deg)
+  //-moz-transform: rotate(360deg)
+  //-webkit-transform: rotate(360deg)
+  //-o-transform: rotate(360deg)
+
+  .profile-card-content
+    //&:hover
+    //  box-shadow: 0 5px 5px rgba(var(--semi-grey-2), 1)
+    //  transition: all .2s ease
     border-radius: 10px
     border: 1px solid var(--semi-color-border)
     padding-bottom: 20px
@@ -14,7 +26,7 @@
       display: flex
       flex-direction: column
       align-items: center
-      padding: 32px
+      padding: 28px
 
       .title
         // text-align: center

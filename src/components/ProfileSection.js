@@ -5,7 +5,7 @@ import {
 } from '@douyinfe/semi-ui';
 import { Component } from 'react';
 import personalInfo from '../data/PersonalData';
-import { IconApartment, IconLink, IconMail, IconUserCardPhone } from '@douyinfe/semi-icons';
+import { IconApartment, IconFlag, IconLanguage, IconLink, IconMail, IconUserCardPhone } from '@douyinfe/semi-icons';
 
 export default class ProfileSection extends Component {
     constructor(props) {
@@ -18,7 +18,7 @@ export default class ProfileSection extends Component {
 
     render() {
         const { Title, Text } = Typography;
-        const { firstName, lastName, tel, email, location, website } = this.state.info;
+        const { firstName, lastName, tel, email, location, affiliation, website, language } = this.state.info;
         return (
             <div className={ 'profile-card-wrapper' }>
                 <div className="profile-card-content">
@@ -26,6 +26,7 @@ export default class ProfileSection extends Component {
                         <Avatar
                             // TODO: the size of Avatar should be changed with media query
                             // "media query not in css"
+                            className={ "profile-avatar" }
                             alt={ 'avatar' }
                             size={ 'extra-large' }
                             src={ 'https://avatars.githubusercontent.com/u/15688641?v=4' }
@@ -33,13 +34,28 @@ export default class ProfileSection extends Component {
                         <Title className="title" heading={ 3 }>
                             { firstName } { lastName }
                         </Title>
+                        <Text className="subtitle">
+                            <i>Full-stack Engineer</i>
+                        </Text>
                     </div>
                     <div className={ 'profile-card-details-wrapper' }>
                         <Space vertical align={ "start" } spacing={ "tight" }>
                             {/* TODO: decouple this */ }
-                            <div className="location">
+                            <div className="affiliation">
                                 <Space>
                                     <IconApartment
+                                        style={ {
+                                            color: 'var(--semi-color-text-1)',
+                                        } }
+                                    />
+                                    <Text strong type={ 'secondary' }>
+                                        { affiliation }
+                                    </Text>
+                                </Space>
+                            </div>
+                            <div className="location">
+                                <Space>
+                                    <IconFlag
                                         style={ {
                                             color: 'var(--semi-color-text-1)',
                                         } }
@@ -84,6 +100,18 @@ export default class ProfileSection extends Component {
                                     />
                                     <Text strong type={ 'secondary' }>
                                         { tel }
+                                    </Text>
+                                </Space>
+                            </div>
+                            <div className="lang">
+                                <Space>
+                                    <IconLanguage
+                                        style={ {
+                                            color: 'var(--semi-color-text-1)',
+                                        } }
+                                    />
+                                    <Text strong type={ 'secondary' }>
+                                        { language }
                                     </Text>
                                 </Space>
                             </div>
