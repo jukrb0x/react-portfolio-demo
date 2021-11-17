@@ -24,7 +24,7 @@ class Foot extends Component {
                     <IconTerminal size="large" style={ { marginRight: '8px' } }/>
                     <div className={ "foot-copyright" }>
                         <span>Copyright &copy; 2021 { this.state.info.firstName } { this.state.info.lastName }.&nbsp;</span>
-                        <span>All Rights Reserved.</span>
+                        <span>All Rights Reserved. | SWE1909503</span>
                     </div>
                 </div>
                 <div>

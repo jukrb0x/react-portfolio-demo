@@ -1,15 +1,15 @@
 @import "screen"
 
 .foot-wrapper
+  display: flex
+  color: var(--semi-color-text-2)
   @include xs-screen
     // works when screen.size >= screen-xs
     font-size: 0.8rem
-    display: flex
     flex-direction: column
     justify-content: space-between
     align-items: center
     padding: 10px
-    color: var(--semi-color-text-2)
     background-color: rgba(var(--semi-grey-0), 1)
     .foot-copyright
       display: flex
@@ -20,12 +20,10 @@
 
   @include sm-screen
     // works when screen.size >= screen-sm
-    display: flex
     flex-direction: column
     justify-content: space-between
     align-items: center
     padding: 20px
-    color: var(--semi-color-text-2)
     background-color: rgba(var(--semi-grey-0), 1)
     .foot-copyright
       display: block
@@ -37,11 +35,4 @@
     flex-direction: row
     justify-content: space-between
     padding: 20px
-    color: var(--semi-color-text-2)
     background-color: rgba(var(--semi-grey-0), 1)
-
-//@include lg-screen
-//  justify-content: center
-//  padding: 10px
-//  color: var(--semi-color-text-2)
-//  background-color: rgba(var(--semi-grey-0), 1)
