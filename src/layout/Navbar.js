@@ -37,9 +37,10 @@ class Navbar extends Component {
             <div style={ { backgroundColor: 'var(--semi-color-bg-1)' } } className={ "navbar" }>
                 <Nav mode="horizontal" defaultSelectedKeys={ [this.state.selectedNav] }>
                     <Nav.Header>
-                        <IconPercentage style={ { fontSize: 36, color: "var(--semi-color-text-1" } }/>
+                        <NavLink to={ "/home" }>
+                            <IconPercentage style={ { fontSize: 36, color: "var(--semi-color-text-1" } }/>
+                        </NavLink>
                     </Nav.Header>
-
                     <NavLink to="/home">
                         <Nav.Item itemKey="home" text="Home" icon={ <IconHome size="large"/> }/>
                     </NavLink>
@@ -60,16 +61,6 @@ class Navbar extends Component {
                                     this.handleDarkMode()
                                 } }
                         />
-                        {/*<Dropdown*/ }
-                        {/*    trigger={ "click" }*/ }
-                        {/*    position={ "bottomRight" }*/ }
-                        {/*    render={*/ }
-                        {/*        <Dropdown.Menu>*/ }
-                        {/*            <Dropdown.Item>1: click me!</Dropdown.Item>*/ }
-                        {/*        </Dropdown.Menu>*/ }
-                        {/*    }*/ }
-                        {/*>*/ }
-                        {/*</Dropdown>*/ }
                         <Button theme={ "borderless" }
                                 className={ "dropdown-nav-menu" }
                                 icon={ <IconMenu size={ "extra-large" }/> }
