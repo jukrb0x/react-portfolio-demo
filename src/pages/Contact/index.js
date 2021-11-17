@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { Form, Button, Typography } from "@douyinfe/semi-ui";
+import ProfileSection from "../../components/ProfileSection";
 
 export default class Contact extends Component {
     componentDidMount() {
@@ -19,6 +20,9 @@ export default class Contact extends Component {
         const { Input, Checkbox } = Form;
         return (
             <div className={ "contact-content-wrapper" }>
+                <div className="contact-content-profile">
+                    <ProfileSection/>
+                </div>
                 <div className="contact-content">
                     <div className={ "contact-content-header" }>
                         <Title heading={ 1 }>Contact</Title>

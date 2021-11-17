@@ -3,7 +3,7 @@ import { Space, Typography } from "@douyinfe/semi-ui";
 
 export default class ResumeItem extends Component {
     render() {
-        const { title, dateRange, description, profession } = this.props.item;
+        const { title, datetime, description, profession } = this.props.item;
         const { Title, Paragraph, Text } = Typography;
         return (
             <div className="resume-item-wrapper">
@@ -19,7 +19,7 @@ export default class ResumeItem extends Component {
                         </div>
                         <div className="resume-item-time">
                             <Text type={ "tertiary" }>
-                                ({ dateRange })
+                                ({ datetime })
                             </Text>
                         </div>
                     </Space>

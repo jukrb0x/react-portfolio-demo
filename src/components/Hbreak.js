@@ -7,7 +7,6 @@ class Hbreak extends Component {
         this.state = {
             border: props.border !== undefined
         }
-        console.log(props.border === true ? "ok" : "fk")
     }
 
     render() {

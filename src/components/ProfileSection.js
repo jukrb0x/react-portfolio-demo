@@ -1,11 +1,19 @@
 import {
     Typography,
     Avatar,
-    Space
+    Space, Button, Tooltip
 } from '@douyinfe/semi-ui';
 import { Component } from 'react';
 import personalInfo from '../data/PersonalData';
-import { IconApartment, IconFlag, IconLanguage, IconLink, IconMail, IconUserCardPhone } from '@douyinfe/semi-icons';
+import {
+    IconApartment, IconFacebook,
+    IconFlag, IconGithubLogo,
+    IconInstagram,
+    IconLanguage,
+    IconLink,
+    IconMail, IconTwitter,
+    IconUserCardPhone, IconYoutube
+} from '@douyinfe/semi-icons';
 
 export default class ProfileSection extends Component {
     constructor(props) {
@@ -113,6 +121,43 @@ export default class ProfileSection extends Component {
                                     <Text strong type={ 'secondary' }>
                                         { language }
                                     </Text>
+                                </Space>
+                            </div>
+                            <div className={ "quick-link" }>
+                                <Space spacing={ "tight" }>
+                                    {/* TODO: these can be decouple, too */ }
+                                    {/* I am so lazy */ }
+                                    <Tooltip content={ "Instagram" }>
+                                        <a href={ "https://instagram.com/" } target={ "_blank" } rel="noreferrer">
+                                            <Button theme={ "borderless" } className={ "instagram" }
+                                                    icon={ <IconInstagram/> }/>
+                                        </a>
+                                    </Tooltip>
+                                    <Tooltip content={ "GitHub" }>
+                                        <a href={ "https://github.com/jukrb0x/" } target={ "_blank" } rel="noreferrer">
+                                            <Button theme={ "borderless" } className={ "github" }
+                                                    icon={ <IconGithubLogo/> }/>
+                                        </a>
+                                    </Tooltip>
+                                    <Tooltip content={ "Facebook" }>
+                                        <a href={ "https://facebook.com/" }
+                                           target={ "_blank" } rel="noreferrer">
+                                            <Button theme={ "borderless" } className={ "facebook" }
+                                                    icon={ <IconFacebook/> }/>
+                                        </a>
+                                    </Tooltip>
+                                    <Tooltip content={ "Twitter" }>
+                                        <a href={ "https://twitter.com/" } target={ "_blank" } rel="noreferrer">
+                                            <Button theme={ "borderless" } className={ "facebook" }
+                                                    icon={ <IconTwitter/> }/>
+                                        </a>
+                                    </Tooltip>
+                                    <Tooltip content={ "YouTube" }>
+                                        <a href={ "https://youtube.com/" } target={ "_blank" } rel="noreferrer">
+                                            <Button theme={ "borderless" } className={ "facebook" }
+                                                    icon={ <IconYoutube/> }/>
+                                        </a>
+                                    </Tooltip>
                                 </Space>
                             </div>
                         </Space>

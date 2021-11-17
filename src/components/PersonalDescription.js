@@ -6,7 +6,7 @@ export default class PersonalDescription extends Component {
         const { Paragraph } = Typography;
         return (
             <Paragraph className="personal-description">
-                some description here
+                I am a full-stack software engineering based in Amoy.
             </Paragraph>
         );
     }

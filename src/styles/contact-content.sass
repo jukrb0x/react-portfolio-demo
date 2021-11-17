@@ -1,4 +1,13 @@
+@import "screen"
+
 .contact-content
   margin-left: 1em
   flex: 1
   padding: 1em
+
+
+.contact-content-profile
+  @include xs-screen
+    display: none
+  @include sm-screen
+    display: block
