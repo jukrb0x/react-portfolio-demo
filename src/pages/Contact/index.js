@@ -17,7 +17,7 @@ export default class Contact extends Component {
 
     render() {
         const { Title } = Typography;
-        const { Input, Checkbox } = Form;
+        const { Input, Checkbox, TextArea } = Form;
         return (
             <div className={ "contact-content-wrapper" }>
                 <div className="contact-content-profile">
@@ -29,9 +29,11 @@ export default class Contact extends Component {
                         <Title heading={ 4 } type={ "tertiary" }>Say something to me!</Title>
                     </div>
                     <div className="contact-content-body">
-                        <Form validateFields={ this.syncValidate }
+                        <Form labelPosition='inset'
+                              validateFields={ this.syncValidate }
                               onSubmit={ values => this.handleSubmit(values) }
-                              style={ { width: 400 } }>
+                            // style={ { width: 400 } }
+                        >
                             {/*FIXME*/ }
                             { ({ formState, values, formApi }) => (
                                 <>
@@ -43,13 +45,14 @@ export default class Contact extends Component {
                                     />
 
                                     <Input
+                                        rules={ [{ required: true, message: 'Please input your email!' }] }
                                         field="email"
                                         label="E-mail"
                                         style={ { width: '100%' } }
                                         trigger='blur'
                                     />
 
-                                    <Input
+                                    <TextArea
                                         field="name"
                                         label="名称（Input）"
                                         style={ { width: '100%' } }
