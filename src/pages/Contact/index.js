@@ -1,12 +1,18 @@
 import { Component } from "react";
 import { Form, Button, Typography, Toast } from "@douyinfe/semi-ui";
 import ProfileSection from "../../components/ProfileSection";
+import axios from "axios";
 
 export default class Contact extends Component {
     // FIXME: handle formApi
     constructor(props) {
         super(props);
         this.syncValidate = this.syncValidate.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.state = {
+            baseUrl: "http://localhost:8080/My_Resume_Zhang_Jinbiao_war_exploded",
+            postFormApi: "/postFormApi"
+        }
     }
 
     componentDidMount() {
@@ -44,7 +50,19 @@ export default class Contact extends Component {
 
     handleSubmit(values) {
         // TODO: axios post to backend
-        Toast.info('Your message is submitted!');
+        const { baseUrl, postFormApi } = this.state;
+        const submitUrl = baseUrl + postFormApi;
+        axios.post(submitUrl, values)
+            .then(res => {
+                console.log(res);
+                Toast.success("Message sent!");
+            })
+            .catch(err => {
+                console.log(err);
+                Toast.error("Message failed to send!");
+            });
+
+        // Toast.info('Your message is submitted!');
     }
 
 

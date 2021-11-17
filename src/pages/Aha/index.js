@@ -8,7 +8,8 @@ export default class Aha extends Component {
         super(props);
         this.state = {
             isLoading: true,
-            baseUrl: "http://localhost:8080/My_Resume_Zhang_Jinbiao_war_exploded/test", // FIXME
+            baseUrl: "http://localhost:8080/My_Resume_Zhang_Jinbiao_war_exploded",
+            getAhaApi: "/getAha",
             response: String
         }
 
@@ -21,7 +22,9 @@ export default class Aha extends Component {
     }
 
     requestContent() {
-        axios.get(this.state.baseUrl).then(
+        const { baseUrl, getAhaApi } = this.state;
+        const reqUrl = baseUrl + getAhaApi;
+        axios.get(reqUrl).then(
             (res) => {
                 this.setState({
                     response: res.data,
@@ -59,7 +62,8 @@ export default class Aha extends Component {
                         </div>
                     </Tooltip>
                     <div className={ "aha-content-body" }>
-                        <Skeleton placeholder={ SkeletonPlaceholder } loading={ isLoading } active style={ { flex: 1 } }>
+                        <Skeleton placeholder={ SkeletonPlaceholder } loading={ isLoading } active
+                                  style={ { flex: 1 } }>
                             <Paragraph spacing={ "extended" }>{ response }</Paragraph>
                         </Skeleton>
                     </div>
