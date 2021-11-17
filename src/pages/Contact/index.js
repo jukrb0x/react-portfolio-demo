@@ -16,7 +16,7 @@ export default class Contact extends Component {
     }
 
     render() {
-        const { Title, Paragraph } = Typography;
+        const { Title } = Typography;
         const { Input, Checkbox } = Form;
         return (
             <div className={ "contact-content-wrapper" }>
