@@ -1,6 +1,6 @@
 import { Component } from "react";
 import axios from "axios";
-import { Skeleton, Space, Typography } from "@douyinfe/semi-ui";
+import { Skeleton, Space, Tooltip, Typography } from "@douyinfe/semi-ui";
 import ProfileSection from "../../components/ProfileSection";
 
 export default class Aha extends Component {
@@ -39,7 +39,7 @@ export default class Aha extends Component {
     render() {
         const { Paragraph, Title } = Typography;
         const { isLoading, response } = this.state;
-        const placeholder = (
+        const SkeletonPlaceholder = (
             <div>
                 <Skeleton.Title style={ { width: 120, marginBottom: "20px" } }/>
                 <Skeleton.Paragraph rows={ 4 }/>
@@ -51,12 +51,15 @@ export default class Aha extends Component {
                     <ProfileSection/>
                 </div>
                 <Space vertical align={ "start" } className={ "aha-content" }>
-                    <div className={ "aha-content-header" }>
-                        <Title heading={ 1 }>Congrats! 😎</Title>
-                        <Title heading={ 4 } type={ "tertiary" }>You found this page</Title>
-                    </div>
+                    <Tooltip
+                        content={ "This page should return a short message from local Apache Tomcat Server (:8080) binding to a Java Servlet." }>
+                        <div className={ "aha-content-header" }>
+                            <Title heading={ 1 }>Congrats! 😎</Title>
+                            <Title heading={ 4 } type={ "tertiary" }>You found this page</Title>
+                        </div>
+                    </Tooltip>
                     <div className={ "aha-content-body" }>
-                        <Skeleton placeholder={ placeholder } loading={ isLoading } active style={ { flex: 1 } }>
+                        <Skeleton placeholder={ SkeletonPlaceholder } loading={ isLoading } active style={ { flex: 1 } }>
                             <Paragraph spacing={ "extended" }>{ response }</Paragraph>
                         </Skeleton>
                     </div>
